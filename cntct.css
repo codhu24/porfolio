@@ -1,0 +1,74 @@
+
+body{
+    background-color: rgb(11, 143, 62);
+    color: black;
+
+    
+      
+}
+f1
+{
+    font-size: 30px;
+    color: rgb(3, 5, 1);
+}
+h1{
+    font-size: 40px;
+}
+nav ul li a:hover {
+    color: black;
+    font-size: 1.3rem;
+  }
+  
+  nav ul li a[href="/"]:hover {
+    color: red; /* Change text color on hover */
+    font-size: 1.3rem;
+  }
+  #openGmailBtn
+  {
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(251, 255, 0);
+  }
+  #openGmailBtn:hover
+{
+    background-color: rgb(7, 96, 21);
+}
+.hd
+{
+  font-weight: 4000;
+  font-size: 30px;
+  font-style:normal;
+}
+p{
+  font-size: 20px;
+}
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(251, 255, 0);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: rgb(7, 96, 21);
+
+}
+.btn-linkedin {
+  font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(251, 255, 0);
+    color: black;
+}
+
+.btn-linkedin:hover {
+  background-color: rgb(7, 96, 21);
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
