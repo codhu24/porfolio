@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+f1 {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+body {
+    background-color: rgb(164, 210, 85);
+    color: black;
+    font-family: "Protest Guerrilla", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+nav {
+    font-size: 1.5rem;
+    margin-left: 30px;
+    margin-top: 20px;
+    color: black;
+    transition-duration: 1.5s;
+}
+nav ul {
+    list-style-type: none; /* Removes bullet points */
+}
+nav ul li {
+    display: inline;
+    color: black;
+}
+nav ul li a {
+    color: black; /* Ensures the link color is black */
+    text-decoration: none; /* Removes underline from link */
+}
+.introvid
+{
+    font-size: 30px;
+    margin-left: 40px;
+    margin-top: 25px;
+
+}
+.Assign
+{
+    
+     font-size: 30px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.learn
+{
+    
+         margin-left: 40px;
+    margin-top: 40px;
+}
+video {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
