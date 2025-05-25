@@ -1,82 +1,403 @@
+/* abut.css - Updated for side-by-side layout */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #d4d4d4;
+    background-color: #e2eaf4;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 nav {
     width: 100%;
-    background-color: #d4d4d4;
+    padding: 15px 10px;
+    margin-bottom: 30px;
+}
+
+nav .left {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
 nav ul {
-    margin: 10px;
+     margin: 10px;
     padding: 20px;
     list-style: none;
-    display: inline-block;
-}
+    display: inline-block;}
 
 nav ul li {
-    margin: 0;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    display: block;
-    padding: 15px;
-    color: #fff;
+    color: white;
     text-decoration: none;
-}
-
-nav ul li a:hover {
-    color: #ddd;
-}
-
-.about-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Adjust the space between the boxes */
-    margin-top: 20px;
-}
-
-.about-me {
-    background-color: #c5d5f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* Adjust the width of the boxes */
-    text-align: center;
-}
-
-h1 {
-    font-size: 24px;
-    color: #333;
-}
-
-p {
-    color: #666;
-}
-
-img {
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
     transition: background-color 0.3s;
 }
 
-a:hover {
-    background-color: #0056b3;
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 5%;
+    margin-top: 100px;
+}
+
+.about-me {
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border: 6px solid #000;
+    box-shadow: 12px 12px 0 #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-me:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 17px 17px 0 #000;
+}
+
+.about-me img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 4px solid #000;
+}
+
+.about-me h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-me h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 3px;
+    background-color: #000;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.about-me:hover h1::after {
+    transform: translateX(0);
+}
+
+.about-me p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.about-me ul {
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+.about-me li {
+    margin: 0.8rem 0;
+    color: #000;
+    font-size: 16px;
+    position: relative;
+}
+
+.about-me li::before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+    color: #000;
+}
+
+.about-me a {
+    display: inline-block;
+    border: 3px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 50%;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+}
+
+.about-me a::before {
+    content: "Download?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: #5ad641;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.about-me a:hover::before {
+    transform: translateY(0);
+}
+
+.about-me a:active {
+    transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-me {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Keep your existing card class and other styles below */
+/* From Uiverse.io by 0xnihilism */ 
+.card {
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border: 6px solid #000;
+    box-shadow: 12px 12px 0 #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 17px 17px 0 #000;
+  }
+  
+  .card__title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 3px;
+    background-color: #000;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .card:hover .card__title::after {
+    transform: translateX(0);
+  }
+  
+  .card__content {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  
+  .card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .card__form input {
+    padding: 10px;
+    border: 3px solid #000;
+    font-size: 16px;
+    font-family: inherit;
+    transition: transform 0.3s;
+    width: calc(100% - 26px); /* Adjust for padding and border */
+  }
+  
+  .card__form input:focus {
+    outline: none;
+    transform: scale(1.05);
+    background-color: #000;
+    color: #ffffff;
+  }
+  
+  .card__button {
+    border: 3px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    left: 20%;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .card__button::before {
+    content: "Sure?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: #5ad641;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+  
+  .card__button:hover::before {
+    transform: translateY(0);
+  }
+  /* From Uiverse.io by gharsh11032000 */ 
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px 20px;
+    background-color: #212121;
+    border: none;
+    font: inherit;
+    color: #e8e8e8;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    translate: 0 105%;
+    background-color: #F53844;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button svg {
+    width: 24px;
+    height: 24px;
+    fill: #F53844;
+    margin-left: 5px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover {
+    animation: shake 0.2s linear 1;
+}
+
+.button:hover::before {
+    translate: 0 0;
+}
+
+.button:hover svg {
+    fill: #e8e8e8;
+}
+
+@keyframes shake {
+    0% {
+        rotate: 0deg;
+    }
+
+    33% {
+        rotate: 10deg;
+    }
+
+    66% {
+        rotate: -10deg;
+    }
+
+    100% {
+        rotate: 10deg;
+    }
+}
+
+.card__button:active {
+    transform: scale(0.95);
+}
+
+@keyframes glitch {
+    0% {
+      transform: translate(2px, 2px);
+    }
+    25% {
+      transform: translate(-2px, -2px);
+    }
+    50% {
+      transform: translate(-2px, 2px);
+    }
+    75% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(2px, 2px);
+    }
+  }
+  
+  .glitch {
+    animation: glitch 0.3s infinite;
+  }
+
+  
