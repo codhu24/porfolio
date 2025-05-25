@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background-color: #e2eaf4;
+    background-color: #e2eaf4 !important;
     color: black;
     font-family: "Protest Guerrilla", system-ui;
     font-weight: 400;
@@ -439,6 +439,10 @@ video {
     .pdf-container iframe {
         min-height: 400px;
     }
+
+    body {
+        background-color: #e2eaf4 !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -452,6 +456,10 @@ video {
 
     .pdf-container iframe {
         min-height: 300px;
+    }
+
+    body {
+        background-color: #e2eaf4 !important;
     }
 
     .button-container {
