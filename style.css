@@ -13,7 +13,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #e2eaf4;
+  background: #e2eaf4 !important;
   color: var(--text);
   overflow-x: hidden;
 }
@@ -120,12 +120,18 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
+  body {
+    background: #e2eaf4 !important;
+  }
   .first {
     padding: 5rem 3% 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  body {
+    background: #e2eaf4 !important;
+  }
   .navbar {
     padding: 0.8rem 3%;
   }
@@ -155,6 +161,9 @@ body {
 }
 
 @media (max-width: 480px) {
+  body {
+    background: #e2eaf4 !important;
+  }
   .nav-links {
     gap: 0.5rem;
   }
