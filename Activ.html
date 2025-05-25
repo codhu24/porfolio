@@ -9,133 +9,279 @@
     <link rel="stylesheet" href="act.css"> 
     <title>Activity</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- From Uiverse.io by Javierrocadev --> 
+
+
+  
+  
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .popup-btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .popup-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        </ul>
+        <div class="left">
+            <button class="button" onclick="window.location.href='index.html'">
+                <span><f1>Home</f1></span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-miterlimit="2" stroke-linejoin="round" fill-rule="evenodd" clip-rule="evenodd"><path fill-rule="nonzero" d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+                </span>
+            </button>
+        </div>
     </nav>
-
-    <button class="collapsible">Self-Introduction Video</button>
-    <div class="content">
-        
-        <video controls>
-            <source src="vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <br><br><br>
+    
+    <!-- Buttons -->
+    <div class="button-container">
+        <button onclick="openModal('videoModal')" class="shadow__btn">
+            Self-Introduction Video
+        </button>
+        <button onclick="openModal('learningModal')" class="shadow__btn">
+            Learning
+        </button>
+        <button onclick="openModal('movieModal')" class="shadow__btn">
+            Movie Analysis
+        </button>
+        <button onclick="openModal('personalityModal')" class="shadow__btn">
+            SOWC Analysis
+        </button>
+        <button onclick="openModal('coverLetterModal')" class="shadow__btn">
+            Cover Letter
+        </button>
+        <button onclick="openModal('speechModal')" class="shadow__btn">
+            Speech
+        </button>
+        <button onclick="openModal('profilingModal')" class="shadow__btn">
+            Profiling Sheet
+        </button>
     </div>
-    
-    <button class="collapsible">Learning</button>
-    <div class="content">
-        
-        <br>
-        Lecture-I
-        <br>
-        <f1>Personality-improving questions help individuals reflect on their thoughts, behaviors, and emotions, leading to self-awareness and growth. By asking thought-provoking questions—such as What are my strengths and weaknesses? or How do I handle criticism?—people gain insight into their character, emotional intelligence, and areas for improvement.</f1>
-    </div>
-    
-    <button class="collapsible">Movie Analysis</button>
-<div class="content">
-    <h1>Shawshank Redemption</h1>
-    <br>
-    <!-- Adding your movie analysis content here -->
-    <f2><h2>Your Favourite Dialogue and Why</h2>
-    <p><strong>My favourite dialogue is “Hope is a dangerous thing it can drive a man insane”.</strong> This dialogue suits not only a prisoner but a common man. The dialogue tries to convey the message that hope is a good thing, but it becomes dangerous when one holds on to it for very long. Hope drives a man crazy because all his life he hopes for improvement but never makes any move; the endless wait can make a man mad.</p>
-    
-    <h2>Your Personal Review</h2>
-    <p><strong>Shawshank redemption</strong> is a quite good movie. It is a beautiful way of portraying a simplistic story. A glimpse into the prison life and how everyone goes on to their daily life, what all problems, tasks, challenges a new inmate must face in prison.</p>
-    <p>My favourite character was ‘Brooks’ and prison inmate who oversaw the library in the prison. He has been living in the prison since he was in his twenties and have grown old into a seventy-year-old man. Brooks is shown as a warm welcoming character in the movie, who is looking for someone to look after the library after he is gone. Brooks was the perfect example about how the life at prison can also be peaceful and quiet. After spending all his life in prison when he was finally released, he was unable to digest the new world. This showed irrespective of one's surroundings how one can be connected to a place even prison. At last, he kills himself because he has not known any life beyond the walls of prison and also all his friends were there at prison.</p>
-    <p><strong>Shawshank redemption</strong> is one of the best movies I have ever watched. A perfect combination of direction, cinematography, and storytelling. The thing I love the most is even though it had a very simple story, yet it kept me hooked onto the screen.</p>
+<!-- From Uiverse.io by mrhyddenn --> 
 
-    <h2>Learning to Take Away from the Movie</h2>
-    <p>This movie has a couple of takeaways:
-    <ul>
-        <li>One should never lose hope and keep on trying to find a way to his/her goal.</li>
-        <li>One should always be careful of his colleagues or the people that work for him.</li>
-    </ul></p>
-    
-    <h2>Related Concepts You've Learned in the Classroom</h2>
-    <p>Related concepts like to never lose hope, Always keep trying.</p></f2>
-</div>
-
-    
-    <button class="collapsible">Personality Questions</button>
-    <div class="content">
-        <h1>Personality Questions - </h1><br>
-        <f2><p><strong>Q1) Define weakness and strength in one sentence?</strong><br>
-        <strong>Strength:</strong> It is something in which we are really good and irrespective of what challenge we face in that particular field we will be easily able to handle it.<br>
-        <strong>Weakness:</strong> It is something that we are not really good at, can be a sport, writing, subject, anything and sometimes even though we try very hard to improve there is barely improvement in it.</p>
-    
-        <p><strong>Q2) What is your greatest weakness in your opinion?</strong><br>
-        My greatest weakness is that I overthink a little too much.</p>
-    
-        <p><strong>Q3) What do people criticize about me?</strong><br>
-        - I do not pick up calls.<br>
-        - Avoiding hangouts and social interaction at gatherings.</p>
-        
-        <p><strong>Q4) What criticism have you faced from:</strong><br>
-        <strong>a)</strong> Parents – That I should take part in events, fest more.<br>
-        <strong>b)</strong> Siblings – That I am stubborn.<br>
-        <strong>c)</strong> Friends – That I avoid hangouts with them a lot.<br>
-        <strong>d)</strong> Relatives – That I am too shy and do not open up.</p>
-    
-        <p><strong>Q5) What do you find the most difficult decisions to make and why?</strong></p>
-        
-        <p><strong>Q6) How do you handle failure?</strong><br>
-        When faced with such a situation I isolate myself from people for short period of time.</p>
-        
-        <p><strong>Q7) How do you handle success?</strong><br>
-        When I win at something or a problem is solved which occupies my mind I usually treat myself some good food and a movie.</p>
-        
-        <p><strong>Q8) How do you view yourself and why?</strong><br>
-        <strong>a)</strong> Calm<br>
-        <strong>b)</strong> Patient<br>
-        <strong>c)</strong> Dominating<br>
-        <strong>d)</strong> Confident<br>
-        <strong>e)</strong> Reserved<br>
-        Because in difficult situations I don’t panic, or I am anxious to jump to a decision. I usually take the team leader position whenever there is a team formation. But I am very reserved too, I do not let any person get too friendly or know me at a personal level.</p>
-   
-        <p><strong>Q9) Who do you compare yourself to and why?</strong><br>
-        A very common answer but I compare myself to my old self and how I have improved over time.</p>
-        
-        <p><strong>Q10) What major challenges have you faced so far and how did you handle them?</strong><br>
-        One of the biggest challenges I faced was the 12th board exams because after coming from the covid era of passing the exam without giving it was a challenge for me and I studied extra for the exam for months.</p>
-        
-        <p><strong>Q11) What is the biggest complaint you have received so far?</strong><br>
-        That I am too introverted and shy. That I ignore people a lot at a social gathering. When I am in a hurry I drive recklessly.</p>
-        
-        <p><strong>Q12) What have you learned from your mistakes?</strong><br>
-        That I should take action when there is time and not wait till the deadline.</p>
-        
-        <p><strong>Q13) What motivates you?</strong><br>
-        That my parents have sacrificed so much for me and I should try my best so that they can retire early.</p>
-        
-        <p><strong>Q14) What is your greatest strength in your opinion?</strong><br>
-        That I am very calm and always open to learning new topics.</p>
-        
-        <p><strong>Q15) How will your strength help you in achieving your goal?</strong><br>
-        Being patient, calm, and always curious to learn is much needed in cybersecurity because in an age of rapid enhancements in technology, a cybersecurity professional should always be updated with the latest technology. This could only be achieved if one is always open to learning new concepts.</p>
-   
-        <p><strong>Q16) What have you achieved on basis of your strength so far?</strong><br>
-        This has helped me to learn beyond the scope of my course like all about the internet, the computer architecture in-depth, some philosophy, some physics. This helps in interacting on various topics with many people during a social gathering.</p> </f2>
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('videoModal')">&times;</span>
+            <video controls>
+                <source src="Vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
-    
+
+    <!-- Learning Modal -->
+    <div id="learningModal" class="modal">
+        <div class="modal-content pdf-viewer-container">
+            <span class="close" onclick="closeModal('learningModal')">&times;</span>
+            <h1>Learning Report</h1>
+            <div class="pdf-container">
+                <iframe id="learningPdfViewer" src="lerng.pdf" type="application/pdf" width="100%" height="600px"></iframe>
+            </div>
+            <div class="pdf-fallback">
+                <p>If the PDF doesn't load, you can <a href="lerng.pdf" download>download it here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie Analysis Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('movieModal')">&times;</span>
+            <br>
+            <div class="movie-image">
+                <img src="ss.jpg" alt="Shawshank Redemption Movie" style="max-width: 25%; height: 25%;">
+            </div>
+            <br>
+            <f2>
+                <h2>Your Favourite Dialogue and Why</h2>
+                <p><strong>My favourite dialogue is "Hope is a dangerous thing it can drive a man insane".</strong> This dialogue suits not only a prisoner but a common man. The dialogue tries to convey the message that hope is a good thing, but it becomes dangerous when one holds on to it for very long. Hope drives a man crazy because all his life he hopes for improvement but never makes any move; the endless wait can make a man mad.</p>
+                
+                <h2>Your Personal Review</h2>
+                <p><strong>Shawshank redemption</strong> is a quite good movie. Your Review
+                    Shawshank Redemption is a quite good movie. It is a beautiful way of portraying a simplistic story. A glimpse into prison life and how everyone goes on to their daily life, what all the problems, tasks, and challenges a new inmate must face in prison.
+                    
+                    My favourite character was 'Brooks' and prison inmate who oversaw the library in the prison. He has been living in the prison since he was in his twenties and has grown old into a seventy-year-old man. Brooks is shown as a warm welcoming character in the movie, who is looking for someone to look after the library after he is gone. Brooks was the perfect example of how life in prison can also be peaceful and quiet. After spending all his life in prison when he was finally released, he was unable to digest the new world. This showed irrespective of one's surroundings how one can be connected to a place even prison. At last, he kills himself because he has not known any life beyond the walls of the prison and also all his friends were there in prison.
+                    
+                    Shawshank Redemption is one of the best movies I have ever watched. A perfect combination of direction, cinematography, and storytelling. The thing I love the most is even though it had a very simple story, it kept me hooked on the screen.</p>
+                
+                <h2>Learning to Take Away from the Movie</h2>
+                <p>This movie has a couple of takeaways:
+                <ul>
+                    One should never lose hope and keep on trying to find a way to his/her goal.
+                    One should always be care for his colleagues.
+                    Always do what is right and never give up on his/her dreams.
+                    Learn to adapt to the new surroundings instead of living in the past.
+                </ul></p>
+                
+                <h2>Related Concepts You've Learned in the Classroom</h2>
+                <p>Related concepts like to never lose hope, Always keep trying.</p>
+            </f2>
+        </div>
+    </div>
+
+    <!-- Personality Questions Modal -->
+    <div id="personalityModal" class="modal">
+        <div class="modal-content pdf-viewer-container">
+            <span class="close" onclick="closeModal('personalityModal')">&times;</span>
+            <h1>SOWC Report</h1>
+            <div class="pdf-container">
+                <iframe id="pdfViewer" src="sowc.pdf" type="application/pdf" width="100%" height="600px"></iframe>
+            </div>
+            <div class="pdf-fallback">
+                <p>If the PDF doesn't load, you can <a href="sowc.pdf" download>download it here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cover Letter Modal -->
+    <div id="coverLetterModal" class="modal">
+        <div class="modal-content pdf-viewer-container">
+            <span class="close" onclick="closeModal('coverLetterModal')">&times;</span>
+            <h1>Cover Letter</h1>
+            <div class="pdf-container">
+                <iframe id="coverLetterPdfViewer" src="coverl.pdf" type="application/pdf" width="100%" height="600px"></iframe>
+            </div>
+            <div class="pdf-fallback">
+                <p>If the PDF doesn't load, you can <a href="coverl.pdf" download>download it here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speech Modal -->
+    <div id="speechModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('speechModal')">&times;</span>
+            <h1>Speech Video</h1>
+            <div class="video-container">
+                <video controls>
+                    <source src="vid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profiling Sheet Modal -->
+    <div id="profilingModal" class="modal">
+        <div class="modal-content pdf-viewer-container">
+            <span class="close" onclick="closeModal('profilingModal')">&times;</span>
+            <h1>Profiling Sheet</h1>
+            <div class="pdf-container">
+                <iframe id="profilingPdfViewer" src="profsht.pdf" type="application/pdf" width="100%" height="600px"></iframe>
+            </div>
+            <div class="pdf-fallback">
+                <p>If the PDF doesn't load, you can <a href="profsht.pdf" download>download it here</a>.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        var coll = document.getElementsByClassName("collapsible");
-        for (var i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = "block";
+            // Add show class after a brief delay to trigger transition
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            // Wait for transition to complete before hiding
+            setTimeout(() => {
+                modal.style.display = "none";
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                const modal = event.target;
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const modals = document.getElementsByClassName('modal');
+                for (let modal of modals) {
+                    if (modal.style.display === "block") {
+                        modal.classList.remove('show');
+                        setTimeout(() => {
+                            modal.style.display = "none";
+                            document.body.style.overflow = 'auto';
+                        }, 300);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
