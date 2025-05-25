@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e2eaf4;
+    background-color: #e2eaf4 !important;
     margin: 0;
     padding: 20px;
     min-height: 100vh;
@@ -174,12 +174,18 @@ nav ul li a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
+    body {
+        background-color: #e2eaf4 !important;
+    }
     .about-container {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
+    body {
+        background-color: #e2eaf4 !important;
+    }
     .about-container {
         grid-template-columns: 1fr;
     }
